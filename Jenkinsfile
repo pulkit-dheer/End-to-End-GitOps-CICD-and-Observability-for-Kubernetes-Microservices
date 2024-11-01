@@ -7,10 +7,10 @@ pipeline{
     stages{
         stage('Git Checkout'){
             steps{
-                gitCheckout(
+                gitCheckout([
                     branch: "main",
                     url: "https://github.com/pulkit-dheer/End-to-End-GitOps-CICD-and-Observability-for-Kubernetes-Microservices.git"
-                )
+                ])
             }
         }
     }
