@@ -1,17 +1,10 @@
-@Library('my-jenkins-library') _
-
-pipeline {
+pipeline{
     agent any
 
-    stages {
-        stage('Checkout') {
-            steps {
-                script {
-                    gitCheckout([
-                        branch: 'main', 
-                        url: 'https://github.com/pulkit-dheer/End-to-End-GitOps-CICD-and-Observability-for-Kubernetes-Microservices.git' 
-                    ])
-                }
+    stages{
+        stage('Git Checkout'){
+            steps{
+                git branch: 'main', url: 'https://github.com/pulkit-dheer/End-to-End-GitOps-CICD-and-Observability-for-Kubernetes-Microservices.git'
             }
         }
     }
